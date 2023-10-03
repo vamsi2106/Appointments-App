@@ -1,0 +1,24 @@
+.appointments-card {
+  padding: 8px;
+  border-radius: 12px;
+  border: 2px solid #b5b7c4;
+  width: 250px;
+  height: 100px;
+}
+.ac-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+  color: #171f46;
+  font-size: 14px;
+}
+button {
+  background-color: transparent;
+  outline: none;
+  border: 0px solid;
+  cursor: pointer;
+}
