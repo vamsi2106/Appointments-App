@@ -1,146 +1,42 @@
-In this project, let's build an **Appointments App** by applying the concepts we have learned till now.
+# Appointments App
 
-### Refer to the image below:
+![Appointments App](https://assets.ccbp.in/frontend/content/react-js/appointments-app-output.gif)
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/appointments-app-output.gif" alt="appointments app output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+## Overview
 
-### Design Files
+The **Appointments App** allows you to manage appointments efficiently. You can add, star, and filter appointments with ease.
 
-<details>
-<summary>Click to view</summary>
+## Functionality
 
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/appointments-app-sm-output-v2.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/appointments-app-lg-output.png)
+### Add Appointments
 
-</details>
+- Initially, the list of appointments is empty, and the title input and date input are blank.
+- To add an appointment:
+  - Enter a non-empty title.
+  - Select a date using the date picker.
+  - Click the "Add" button.
+- The appointment will be added to the list, and the input fields will be cleared.
 
-### Set Up Instructions
+### Star Appointments
 
-<details>
-<summary>Click to view</summary>
+- To mark an appointment as "starred," click the star icon next to it.
+- The appointment will be highlighted as starred.
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+### Filter Appointments
 
-### Completion Instructions
+- You can filter appointments based on their "star" status:
+  - Click the "Starred" filter to view only starred appointments.
+  - Click it again to show all appointments.
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
+## Components Structure
 
-The app must have the following functionalities
+The Appointments App consists of the following components:
 
-- Initially, the list of appointments should be empty and the title input and date input should be empty
-- When non-empty values are provided for title and date and the **Add** button is clicked,
-  - A new appointment should be added to the list of appointments
-  - The value inside the input elements for title and date should be updated to their initial values
-- When the **Star** on an appointment is clicked, the appointment should be starred
-- The status of the **Starred** filter is updated by clicking on it
-- When the **Starred** filter is active, all the starred appointments should be filtered and displayed
-- When the **Starred** filter is inactive, the list of all appointments should be displayed
-</details>
+- `Appointments` (Responsible for managing appointments)
+- `AppointmentItem` (Displays individual appointment items)
 
-<details>
-<summary>Components Structure</summary>
+## Important Note
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/appointments-app-component-breakdown-structure.png" alt="component structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
-
-</details>
-
-<details>
-<summary>Implementation Files</summary>
-<br/>
-
-Use these files to complete the implementation:
-
-- `src/components/Appointments/index.js`
-- `src/components/Appointments/index.css`
-- `src/components/AppointmentItem/index.js`
-- `src/components/AppointmentItem/index.css`
-</details>
-
-### Quick Tips
-
-<details>
-<summary>Click to view</summary>
-<br>
-
-- The HTML input element with the type `date` is designed for the user to select the date from a date picker
-
-  ```jsx
-  <input type="date" />
-  ```
-
-- The `format` function in the date-fns package can be used to get the formatted date string in the given format
-
-  ```jsx
-  import {format} from 'date-fns'
-
-  console.log(format(new Date(2021, 19, 07), 'dd MMMM yyyy, EEEE')) // 19 July 2021, Monday
-  ```
-
-</details>
-
-### Important Note
-
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- For the `format` function, pass the format string `dd MMMM yyyy, EEEE` as the second argument
-- The star button in each appointment should have the data-testid as **star**
-- The star image in each appointment should have alt as **star**
-
-</details>
-
-### Resources
-
-<details>
-<summary>Image URLs</summary>
-
-- [https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png](https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png) alt should be **appointments**
-- [https://assets.ccbp.in/frontend/react-js/appointments-app/star-img.png](https://assets.ccbp.in/frontend/react-js/appointments-app/star-img.png)
-- [https://assets.ccbp.in/frontend/react-js/appointments-app/filled-star-img.png](https://assets.ccbp.in/frontend/react-js/appointments-app/filled-star-img.png)
-
-</details>
-
-<details>
-<summary>Colors</summary>
-
-<br/>
-
-<div style="background-color: #9796f0; width: 150px; padding: 10px; color: black">Hex: #9796f0</div>
-<div style="background-color: #fbc7d4; width: 150px; padding: 10px; color: black">Hex: #fbc7d4</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
-<div style="background-color: #171f46; width: 150px; padding: 10px; color: white">Hex: #171f46</div>
-<div style="background-color: #8b5cf6; width: 150px; padding: 10px; color: black">Hex: #8b5cf6</div>
-<div style="background-color: #b5b7c4; width: 150px; padding: 10px; color: black">Hex: #b5b7c4</div>
-<div style="background-color: #9897f0; width: 150px; padding: 10px; color: black">Hex: #9897f0</div>
-
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+- For date formatting, the app uses the format string `dd MMMM yyyy, EEEE`.
+- The star button in each appointment has the data-testid "star".
+- The star image in each appointment has the alt text "star".
